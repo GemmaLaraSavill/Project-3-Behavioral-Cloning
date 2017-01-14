@@ -67,5 +67,13 @@ The model has been saved as model.json at the end of each training session.
 ### Testing
 
 I have tested the model driving round the track in autonomous mode. The model has been trained with images from this track.
-The real test is to see the car drive in autonomous mode around the second track, a track it has never seen before.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=CZpvtnVzEKY" target="_blank"><img src="http://img.youtube.com/vi/CZpvtnVzEKY/0.jpg"
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="0" /></a>
+
+The real test is to see the car drive in autonomous mode around the second track, a track it has never seen before:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=TRwdUxb-dq8" target="_blank"><img src="http://img.youtube.com/vi/TRwdUxb-dq8/0.jpg"
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="0" /></a>
+
 This would be the equivalent of the testing data, and shows that the model has not just learned to from the images, or learned the first track (overfitting) but has learned to drive.
