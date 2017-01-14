@@ -12,6 +12,7 @@ The car has three cameras: front facing, on the left and right of the car. This 
 In this project we are only going to use the images and the steering angle of the training log.
 
 ![alt text](img/training-log.png "Training data")
+
 Img 1. Training data log
 
 The first step was to investigate the training data. The steering angles seem to have been normalized between -1 and 1.
@@ -19,18 +20,21 @@ The first step was to investigate the training data. The steering angles seem to
 The distribution of this data is not even, there are many more steering angles around zero.
 
 ![alt text](img/data-steering-angle-dist.png "Training data steering angle distribution")
+
 Img 2. Distribution of the steering angles in the training data
 
 In order to feed the Neural Network a more even distribution of angles and downsample the zero angles I only load angles above or below 0.35 steering values.
 This results in a more even distribution.
 
 ![alt text](img/imported-data-steering-dist.png "Imported data steering angle distribution")
+
 Img 3. Distribution of the steering angles in the imported data
 
 As the driving data recorded is correct driving we also need to teach the Neural Network to recover.
 Instead of recording new recovery data I have added the left and right camera images to the data adding a correction of plus or minus 0.35, as the steering angles are in the range [-1,1] for an 180 degree perspective, so every degree would be equal to 1/90 = 0.0111 I have added about 35 degrees steering wheel turn to left/right images.
 
 ![alt text](img/camera-angles.png "The three camera perspectives")
+
 Img 4. We have hree angle perspectives for every training drive instant and I have corrected the steering values accordingly.
 
 ### Data preprocessing
@@ -41,6 +45,7 @@ I have then changed their brightness level by a random value to simulate driving
 I have added a random 50% chance of horizontal flipping of the image, multiplying the steering angle by -1, to even out the left and right distribution.
 
 ![alt text](img/different-brightness.png "Different brightness")
+
 Img 5. Images with random brightness filters to simulate driving in different lighting conditions.
 
 The data is split into 80% for training and 20% kept aside as validation data.
@@ -71,9 +76,13 @@ I have tested the model driving round the track in autonomous mode. The model ha
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=CZpvtnVzEKY" target="_blank"><img src="http://img.youtube.com/vi/CZpvtnVzEKY/0.jpg"
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="0" /></a>
 
+Img 6. Thumbnail of YouTube video, click to watch.
+
 The real test is to see the car drive in autonomous mode around the second track, a track it has never seen before:
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=TRwdUxb-dq8" target="_blank"><img src="http://img.youtube.com/vi/TRwdUxb-dq8/0.jpg"
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="0" /></a>
+
+Img 7. Thumbnail of YouTube video, click to watch.
 
 This would be the equivalent of the testing data, and shows that the model has not just learned to from the images, or learned the first track (overfitting) but has learned to drive.
