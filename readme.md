@@ -3,6 +3,7 @@
 ## January 2017
 
 In this project I have used a Convolutional Neural Network to teach a car to drive in a simulator.
+[Spanish version](readme_es.md)
 
 ### Data
 
