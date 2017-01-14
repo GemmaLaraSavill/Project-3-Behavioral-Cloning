@@ -36,7 +36,7 @@ Instead of recording new recovery data I have added the left and right camera im
 
 ![alt text](img/camera-angles.png "The three camera perspectives")
 
-Img 4. We have hree angle perspectives for every training drive instant and I have corrected the steering values accordingly.
+Img 4. We have three angle perspectives for every training drive instant and I have corrected the steering values accordingly.
 
 ### Data preprocessing
 

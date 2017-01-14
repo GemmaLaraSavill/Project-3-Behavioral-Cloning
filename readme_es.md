@@ -1,12 +1,12 @@
 # Proyecto 3. Clonación Conductual
-## Nanodegree de Coche Autoónom de Udacity
+## Nanodegree de Coche Autónomo de Udacity
 ## Enero 2017
 
 En este proyecto he utilizado una red neuronal convolucional para que un coche aprenda a conducir de forma autónoma en un simulador.
 
 ### Datos
 
-Los datos de entrenamiento han sido recolectados por un conductor humano usando el simulador. Hay un archivo drive_log.csv que ha registrado la trayectoria de cada imagen fija o fotograma del video, el ángulo de dirección, aceleración, freno y la velocidad del coche en las vueltas de entrenamiento.
+Los datos de entrenamiento han sido recolectados por un conductor humano usando el simulador. Hay un archivo drive_log.csv que ha registrado cada imagen fija o fotograma del video, el ángulo de dirección, aceleración, freno y la velocidad del coche en las vueltas de entrenamiento.
 El coche tiene tres cámaras: apuntando al frente, y una en cada lado del coche, izquierda y derecha. Esto nos da tres ángulos o perspectivas de cada instante de entrenamiento.
 
 En este proyecto sólo vamos a utilizar las imágenes y el ángulo de dirección de los datos de entrenamiento.
@@ -30,7 +30,7 @@ Esto da lugar a una distribución más uniforme.
 
 Img 3. Distribución de los ángulos de dirección de los datos importados.
 
-Como los datos de registrados corresponden a una forma de conducir correcta también necesitamos enseñar a la Red Neural a recuperarse si se acerca a los bordes de la carretera.
+Como los datos registrados corresponden a una forma de conducir correcta también necesitamos enseñar a la Red Neural a recuperarse si se acerca a los bordes de la carretera.
 En lugar de registrar nuevos datos de recuperación he añadido las imágenes de las cámaras izquierda y derecha a los datos añadiendo una corrección de más o menos 0,35, ya que los ángulos de dirección están en el rango [-1,1] para una perspectiva de 180 grados, por lo que cada grado equivale a 1/90 = 0.0111 He añadido alrededor de 35 grados de giro de volante a las imágens izquierda / derecha.
 
 ![alt text](img/camera-angles.png "Las tres perspectivas de cámara")
@@ -64,7 +64,7 @@ He utilizado el optimizador Adam y la métrica de MSE para medir la pérdida.
 
 ### Entrenamiento
 
-He utilizado un generador de python para alimentar datos de entrenamiento y validación al modelo durante el entrenamiento usando la función fit_generator() de Keras.
+He utilizado un generador de python para alimentar datos al modelo durante el entrenamiento usando la función fit_generator() de Keras.
 He agregado un aviso (callback) al modelo para que guarde los mejores pesos de cada sesión de entrenamiento en el archivo model.h5
 He utilizado un tamaño de lote de 128 durante 10 iteraciones.
 El modelo es muy rápido, ya que el entrenamiento dura menos de 5 minutos en una CPU i7.
@@ -86,4 +86,4 @@ alt="Coche conduciendo en la pista 2" width="240" height="180" border="0" /></a>
 
 Img 7. Captura del video de la pista 2. Click para ver.
 
-Esto sería el equivalente a los datos de prueba, y muestra que el modelo no se ha aprendido las imágenes de la primera pista (overfitting), pero ha aprendido a conducir.
+Esto sería el equivalente a los datos de prueba, y muestra que el modelo no se ha aprendido las imágenes de la primera pista (overfitting), ha aprendido a conducir.
