@@ -41,6 +41,7 @@ Img 4. We have hree angle perspectives for every training drive instant and I ha
 
 The images are 320 x 160 pixels in three color channels.
 I have resized the images to half their size in pixels to save memory.
+I have also cropped the images to eliminate unwanted areas that don't provide important information, like the skyline or the car bonnet.
 I have then changed their brightness level by a random value to simulate driving in different light conditions
 I have added a random 50% chance of horizontal flipping of the image, multiplying the steering angle by -1, to even out the left and right distribution.
 
@@ -74,14 +75,14 @@ The model has been saved as model.json at the end of each training session.
 I have tested the model driving round the track in autonomous mode. The model has been trained with images from this track.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=CZpvtnVzEKY" target="_blank"><img src="http://img.youtube.com/vi/CZpvtnVzEKY/0.jpg"
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="0" /></a>
+alt="Car driving on track 1" width="240" height="180" border="0" /></a>
 
 Img 6. Thumbnail of YouTube video, click to watch.
 
 The real test is to see the car drive in autonomous mode around the second track, a track it has never seen before:
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=TRwdUxb-dq8" target="_blank"><img src="http://img.youtube.com/vi/TRwdUxb-dq8/0.jpg"
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="0" /></a>
+alt="Car driving on track 2" width="240" height="180" border="0" /></a>
 
 Img 7. Thumbnail of YouTube video, click to watch.
 
